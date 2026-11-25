@@ -1,0 +1,15 @@
+{
+    "name": "simcompared",
+    "description": "Compare published prices and coverage for travel eSIMs, home-carrier roaming and pocket Wi-Fi.",
+    "owner": {
+        "name": "Jacques Blom",
+        "url": "https://simcompared.com"
+    },
+    "plugins": [
+        {
+            "name": "simcompared",
+            "source": "./",
+            "description": "Compare published prices and coverage for travel eSIMs, home-carrier roaming and pocket Wi-Fi."
+        }
+    ]
+}

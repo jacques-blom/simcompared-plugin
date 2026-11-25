@@ -1,0 +1,10 @@
+{
+    "$schema": "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json",
+    "mcpServers": {
+        "simcompared": {
+            "type": "streamable-http",
+            "url": "https://mcp.simcompared.com",
+            "extensions": {"com.openai": {"auth": {"type": "none"}}}
+        }
+    }
+}

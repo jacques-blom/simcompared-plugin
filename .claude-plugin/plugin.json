@@ -1,0 +1,25 @@
+{
+    "name": "simcompared",
+    "displayName": "Sim Compared",
+    "version": "1.0.0",
+    "description": "Compare published prices and coverage for travel eSIMs, home-carrier roaming and pocket Wi-Fi.",
+    "author": {
+        "name": "Jacques Blom",
+        "url": "https://simcompared.com"
+    },
+    "homepage": "https://simcompared.com",
+    "keywords": [
+        "travel",
+        "esim",
+        "mobile data",
+        "roaming",
+        "coverage",
+        "pocket Wi-Fi"
+    ],
+    "icon": "./assets/icon.png",
+    "license": "MIT",
+    "documentationUrl": "https://simcompared.com/mcp",
+    "supportUrl": "https://simcompared.com/privacy/#contact",
+    "privacyPolicyUrl": "https://simcompared.com/privacy/",
+    "termsOfServiceUrl": "https://simcompared.com/terms/"
+}

@@ -1,0 +1,90 @@
+{
+    "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+    "name": "simcompared",
+    "version": "1.0.0",
+    "description": "Compare published prices and coverage for travel eSIMs, home-carrier roaming and pocket Wi-Fi.",
+    "author": {
+        "name": "Jacques Blom",
+        "url": "https://simcompared.com"
+    },
+    "homepage": "https://simcompared.com",
+    "license": "MIT",
+    "keywords": ["travel", "esim", "mobile data", "roaming", "coverage", "pocket Wi-Fi"],
+    "extensions": {
+        "com.openai": {
+            "onboardingSkill": "./skills/get-started/SKILL.md",
+            "review": {
+                "commerce": false,
+                "commerce_description": "Provider links open a provider or comparison page. Providers handle checkout, payment and service. Some links earn Sim Compared a commission. Commission has no effect on ranking.",
+                "test_cases": {
+                    "positive": [
+                        {
+                            "description": "Compare an eSIM for a ten-day trip with a data minimum and a published currency.",
+                            "prompt": "What is the cheapest eSIM for 10 days in Japan with at least 5 GB? Show prices in USD where published.",
+                            "tools_triggered": "compare_plans",
+                            "expected_behavior": "Pass Japan, days 10, data_gb 5 and currency USD. Lead with an eligible offer, its published price and validity, cite the human comparison page, and include the returned disclosure beside any booking link. Identify other currencies as published."
+                        },
+                        {
+                            "description": "Find one plan for a three-country trip.",
+                            "prompt": "I have 14 days across Spain, France and Italy. Which single eSIM will cover all three countries and give me at least 10 GB?",
+                            "tools_triggered": "route_plans",
+                            "expected_behavior": "Pass ES, FR and IT or their names, days 14 and data_gb 10. Each recommended plan covers all three countries for 14 days and at least 10 GB or unlimited. Cite the route page and keep the returned disclosure beside booking links."
+                        },
+                        {
+                            "description": "Compare Verizon roaming and a travel eSIM in Mexico.",
+                            "prompt": "I'm with Verizon and going to Mexico for a week. Is roaming included on my plan, or should I get an eSIM?",
+                            "tools_triggered": "carrier_roaming",
+                            "expected_behavior": "Use Verizon and Mexico. Explain the eligibility for included roaming from the carrier result and make clear the traveller's own plan matters. Compare the returned 7-day eSIM benchmark and cite the roaming guide."
+                        },
+                        {
+                            "description": "Use local outdoor network evidence for a named route.",
+                            "prompt": "Which mobile network has the best 4G coverage on Australia's Great Ocean Road?",
+                            "tools_triggered": "coverage",
+                            "expected_behavior": "Pass Australia, Great Ocean Road and technology 4G. Name the returned leader, give its percentage and longest gap when present, cite the route coverage page, and describe the figures as modelled outdoor coverage."
+                        },
+                        {
+                            "description": "Read device evidence for the phone's purchase region.",
+                            "prompt": "Does an iPhone 15 bought in mainland China support eSIM?",
+                            "tools_triggered": "phone_esim_support",
+                            "expected_behavior": "Pass the iPhone 15 and mainland China. Answer from that purchase-market observation and cite the manufacturer's human-readable support page. Avoid extrapolating to other variants."
+                        }
+                    ],
+                    "negative": [
+                        {
+                            "description": "The tools compare plans. They cannot buy or activate a plan, take payment, or change a user's account. No tool is needed for this request.",
+                            "prompt": "Activate the eSIM I just bought on my phone and charge my saved card if needed."
+                        },
+                        {
+                            "description": "Travel packing advice needs no Sim Compared tool.",
+                            "prompt": "Write a packing list for my ten-day trip to Japan."
+                        },
+                        {
+                            "description": "General financial data is outside the catalogue. No Sim Compared tool should be used.",
+                            "prompt": "What is Verizon's share price today?"
+                        }
+                    ]
+                }
+            },
+            "interface": {
+                "displayName": "Sim Compared",
+                "shortDescription": "Compare eSIMs and roaming",
+                "longDescription": "Find mobile data for a trip. Sim Compared compares published prices for travel eSIMs, home-carrier roaming and pocket Wi-Fi. Specify your trip length, data needs and destinations for offers that fit. Compare the provider's published prices in the currencies it lists.\n\nUse Sim Compared to find one eSIM that covers every stop, check local outdoor network coverage, compare roaming with an eSIM, and verify whether your phone model supports eSIM in its purchase market. Results link to the comparison or source page. Providers handle purchases. Some provider links earn us a commission.",
+                "developerName": "Jacques Blom",
+                "category": "Travel",
+                "capabilities": ["Read"],
+                "websiteURL": "https://simcompared.com/mcp",
+                "supportURL": "https://simcompared.com/privacy/#contact",
+                "privacyPolicyURL": "https://simcompared.com/privacy/",
+                "termsOfServiceURL": "https://simcompared.com/terms/",
+                "defaultPrompt": [
+                    "Find an eSIM for 10 days in Japan",
+                    "Find one eSIM for Spain, France and Italy",
+                    "Does Verizon roaming work in Mexico?"
+                ],
+                "brandColor": "#F25C45",
+                "composerIcon": "./assets/icon.png",
+                "logo": "./assets/logo.svg"
+            }
+        }
+    }
+}
