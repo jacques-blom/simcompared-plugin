@@ -16,10 +16,5 @@
         "mobile network coverage",
         "eSIM compatibility"
     ],
-    "icon": "./assets/icon.png",
-    "license": "MIT",
-    "documentationUrl": "https://simcompared.com/mcp",
-    "supportUrl": "https://simcompared.com/privacy/#contact",
-    "privacyPolicyUrl": "https://simcompared.com/privacy/",
-    "termsOfServiceUrl": "https://simcompared.com/terms/"
+    "license": "MIT"
 }

@@ -26,4 +26,4 @@ Install from the Claude Code marketplace with `/plugin install simcompared --mar
 
 MIT applies to the files in this plugin package. Sim Compared’s data, MCP responses and website remain all rights reserved. See [LICENSE](LICENSE).
 
-[Privacy](https://simcompared.com/privacy/) · [Terms](https://simcompared.com/terms/) · [Support](https://simcompared.com/privacy/#contact)
+[Documentation](https://simcompared.com/mcp) · [Privacy](https://simcompared.com/privacy/) · [Terms](https://simcompared.com/terms/) · [Support](https://simcompared.com/contact/)
