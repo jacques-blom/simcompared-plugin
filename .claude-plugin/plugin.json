@@ -2,19 +2,19 @@
     "name": "simcompared",
     "displayName": "Sim Compared",
     "version": "1.0.0",
-    "description": "Compare published prices and coverage for travel eSIMs, home-carrier roaming and pocket Wi-Fi.",
+    "description": "Compare travel eSIMs by destination, trip length and data allowance. Check roaming rates, pocket Wi-Fi rentals, outdoor network coverage and phone compatibility. Sim Compared may earn referral fees. These do not affect prices or rankings.",
     "author": {
         "name": "Jacques Blom",
         "url": "https://simcompared.com"
     },
     "homepage": "https://simcompared.com",
     "keywords": [
-        "travel",
-        "esim",
+        "travel eSIM",
         "mobile data",
-        "roaming",
-        "coverage",
-        "pocket Wi-Fi"
+        "international roaming",
+        "pocket Wi-Fi",
+        "mobile network coverage",
+        "eSIM compatibility"
     ],
     "icon": "./assets/icon.png",
     "license": "MIT",
